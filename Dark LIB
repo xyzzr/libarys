@@ -3,7 +3,7 @@ if game.CoreGui:FindFirstChild("MarkBeatsIsGay") then
 end
 game:GetService("UserInputService").InputBegan:connect(
     function(key, gpe)
-        if key.KeyCode == Enum.KeyCode.P then
+        if key.KeyCode == Enum.KeyCode.RightShift then
             pcall(
                 function()
                     for i, v in pairs(game.CoreGui.MarkBeatsIsGay:GetChildren()) do
