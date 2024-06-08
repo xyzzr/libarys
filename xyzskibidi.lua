@@ -1120,7 +1120,7 @@ function MainHolder:Window(HubTitle)
     PluginsButton.Position = UDim2.new(0.666320145, 0, 0.145299152, 0)
     PluginsButton.Size = UDim2.new(0, 136, 0, 70)
     PluginsButton.Font = Enum.Font.Gotham
-    PluginsButton.Text = "Plugins"
+    PluginsButton.Text = "UNFINISHED"
     PluginsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     PluginsButton.TextSize = 22.000
     PluginsButton.TextWrapped = true
