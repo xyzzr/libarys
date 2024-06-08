@@ -718,7 +718,6 @@ function MainHolder:Window(HubTitle)
     end)
 
     PluginsImageButton.MouseButton1Click:Connect(function()
-        MainHolder:Notify("", "Curently In Development", 1)
         for i,v in pairs(MainFrameItemsHolder:GetChildren()) do
             if v.ClassName == "TextLabel" and v.Name ~= "MainTitle" and v.Name ~= "TimeText" then
                 TweenService:Create(
