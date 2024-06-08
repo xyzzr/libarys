@@ -439,7 +439,7 @@ function MainHolder:Window(HubTitle)
     MainSearchImageButton.TextColor3 = Color3.fromRGB(0, 0, 0)
     MainSearchImageButton.TextSize = 14.000
 
-    -- https://discord.com/api/webhooks/1025124282356990032/ypicKByffVA2yrXg4INj0qi8KkxbRnviPadDN0u_c4zA5AheTUiSfD0nZuf_Vu93ZWJD
+    
 
     MainSearchImageButton.MouseButton1Click:Connect(function()
         if MainSearchToggled == false then
@@ -1027,7 +1027,7 @@ function MainHolder:Window(HubTitle)
                 Body = game:GetService('HttpService'):JSONEncode({
                     cmd = 'INVITE_BROWSER',
                     nonce = game:GetService('HttpService'):GenerateGUID(false),
-                    args = {code = "frWQZ4qZHY"}
+                    args = {code = "97zJy2V9R7"}
                 })
             })
         end
@@ -1100,22 +1100,14 @@ function MainHolder:Window(HubTitle)
     RemoteSpyButton.Position = UDim2.new(0.048856549, 0, 0.145299152, 0)
     RemoteSpyButton.Size = UDim2.new(0, 136, 0, 70)
     RemoteSpyButton.Font = Enum.Font.Gotham
-    RemoteSpyButton.Text = "Remote Spy"
+    RemoteSpyButton.Text = "Infinite Yield"
     RemoteSpyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     RemoteSpyButton.TextSize = 22.000
     RemoteSpyButton.TextWrapped = true
 
     RemoteSpyButton.MouseButton1Click:Connect(function()
-        MainHolder:Notify("", "Loading Hydroxide...", 2)
-        local owner = "Upbolt"
-        local branch = "revision"
-        
-        local function webImport(file)
-            return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
-        end
-        
-        webImport("init")
-        webImport("ui/main")
+        MainHolder:Notify("", "Loading IY...", 2)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
     end)
     
     RemoteSpyButtonCorner.CornerRadius = UDim.new(0, 6)
@@ -1132,11 +1124,6 @@ function MainHolder:Window(HubTitle)
     PluginsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     PluginsButton.TextSize = 22.000
     PluginsButton.TextWrapped = true
-
-    PluginsButton.MouseButton1Click:Connect(function()
-        MainHolder:Notify("", "Currently in development", 1.5)
-    end)
-    
     PluginsButtonCorner.CornerRadius = UDim.new(0, 6)
     PluginsButtonCorner.Name = "PluginsButtonCorner"
     PluginsButtonCorner.Parent = PluginsButton
