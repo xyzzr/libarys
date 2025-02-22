@@ -3154,6 +3154,31 @@ function library:Init(key)
                 return SelectorFunctions
             end
             --
+            function SelectorFunctions:RemoveOption(optionText, callback_f)
+                if not list[optionText] then return end -- Exit if the option doesn't exist
+                list[optionText] = nil 
+
+                -- Find and remove the matching button in selectorContainer
+                for _, child in ipairs(selectorContainer:GetChildren()) do
+                    if child:IsA("TextButton") and child.Text == optionText then
+                        child:Destroy() -- Remove the button
+                        break
+                    end
+                end
+
+                -- Update UI sizes
+                AddAmount = AddAmount - 20
+                selectorContainer.Size = UDim2.new(0, 394, 0, Val + AddAmount)
+                selectorTwo.Size = UDim2.new(0, 394, 0, Val + AddAmount)
+                selector.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 2)
+                selectorFrame.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 26)
+
+                UpdatePageSize()
+                checkSizes()
+                  return SelectorFunctions
+            end
+
+            --
             function SelectorFunctions:SetFunction(new)
                 new = new or callback
                 callback = new
