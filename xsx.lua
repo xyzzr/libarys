@@ -4,7 +4,7 @@
   - Please do not use this without permission, I am working really hard on this UI to make it perfect and do not have a big 
     problem with other people using it, please just make sure you message me and ask me before using.
 ]]
-print("3")
+
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -3125,41 +3125,6 @@ function library:Init(key)
                 checkSizes()
                 return SelectorFunctions
             end
-            --
-function SelectorFunctions:RemoveOption(option)
-    if not list[option] then return end  -- Ensure the option exists
-
-    list[option] = nil
-    AddAmount = AddAmount - 20  -- Reduce total height
-
-    -- Remove the button with exact text match
-    for _, v in ipairs(selectorContainer:GetChildren()) do
-        if v:IsA("TextButton") and v.Text:lower() == option:lower() then
-            v:Destroy()
-        end
-    end
-
-    -- Reset selectorText if the removed option was selected
-    if selectorText.Text:lower() == option:lower() then
-        selectorText.Text = ". . ."
-    end
-
-    -- Ensure the size does not go negative
-    local newSize = math.max(Val + AddAmount, 0)
-
-    -- Corrected size updates
-    selectorContainer.Size = UDim2.new(0, 394, 0, newSize)
-    selectorTwo.Size = UDim2.new(0, 394, 0, newSize)
-    selector.Size = UDim2.new(0, 396, 0, newSize + 2)
-    selectorFrame.Size = UDim2.new(0, 396, 0, newSize + 26)
-
-    UpdatePageSize()
-    checkSizes()
-
-    return SelectorFunctions
-end
-
-
             --
             function SelectorFunctions:SetFunction(new)
                 new = new or callback
