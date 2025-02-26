@@ -3130,17 +3130,10 @@ function library:Init(key)
             function SelectorFunctions:RemoveOption(option)
                 list[option] = nil
 
-                RemoveAmount = RemoveAmount + 20
-                AddAmount = AddAmount - 20
-
                 for i,v in pairs(selectorContainer:GetDescendants()) do
                     if v:IsA("TextButton") then
                         if v.Text == option then
                             v:Destroy()
-                            selectorContainer.Size = UDim2.new(0, 394, 0, Val - RemoveAmount)
-                            selectorTwo.Size = UDim2.new(0, 394, 0, Val - RemoveAmount)
-                            selector.Size = UDim2.new(0, 396, 0, (Val - RemoveAmount) + 2)
-                            selectorFrame.Size = UDim2.new(0, 396, 0, (Val + 6) - 20)
                         end
                     end
                 end
