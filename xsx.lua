@@ -3129,7 +3129,7 @@ function library:Init(key)
             local RemoveAmount = 0
             function SelectorFunctions:RemoveOption(option)
                 list[option] = nil
-
+                 AddAmount = AddAmount - 20
                 for i,v in pairs(selectorContainer:GetDescendants()) do
                     if v:IsA("TextButton") then
                         if v.Text == option then
@@ -3141,7 +3141,10 @@ function library:Init(key)
                 if selectorText.Text == option then
                     selectorText.Text = ". . ."
                 end
-
+                selectorContainer.Size = UDim2.new(0, 394, 0, Val - AddAmount)
+                selectorTwo.Size = UDim2.new(0, 394, 0, Val - AddAmount)
+                selector.Size = UDim2.new(0, 396, 0, (Val - AddAmount) - 2)
+                selectorFrame.Size = UDim2.new(0, 396, 0, (Val - AddAmount) - 26)
                 UpdatePageSize()
                 checkSizes()
                 return SelectorFunctions
