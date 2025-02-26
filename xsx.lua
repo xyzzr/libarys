@@ -3142,6 +3142,7 @@ function library:Init(key)
                     end
 
                     -- Corrected size calculations
+                    checkSizes()
                     selectorContainer.Size = UDim2.new(0, 394, 0, Val + AddAmount)
                     selectorTwo.Size = UDim2.new(0, 394, 0, Val + AddAmount)
                     selector.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 2)
