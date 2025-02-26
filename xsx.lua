@@ -3126,29 +3126,32 @@ function library:Init(key)
                 return SelectorFunctions
             end
             --
-            local RemoveAmount = 0
             function SelectorFunctions:RemoveOption(option)
-                list[option] = nil
-                 AddAmount = AddAmount - 20
-                for i,v in pairs(selectorContainer:GetDescendants()) do
-                    if v:IsA("TextButton") then
-                        if v.Text == option then
+                if list[option] then
+                    list[option] = nil
+                    AddAmount = AddAmount - 20  -- Correctly decrease total height
+
+                    for _, v in pairs(selectorContainer:GetDescendants()) do
+                        if v:IsA("TextButton") and v.Text == option then
                             v:Destroy()
                         end
                     end
-                end
 
-                if selectorText.Text == option then
-                    selectorText.Text = ". . ."
+                    if selectorText.Text == option then
+                        selectorText.Text = ". . ."
+                    end
+
+                    -- Corrected size calculations
+                    selectorContainer.Size = UDim2.new(0, 394, 0, Val + AddAmount)
+                    selectorTwo.Size = UDim2.new(0, 394, 0, Val + AddAmount)
+                    selector.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 2)
+                    selectorFrame.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 26)
+                    UpdatePageSize()
+                    checkSizes()
                 end
-                selectorContainer.Size = UDim2.new(0, 394, 0, Val - AddAmount)
-                selectorTwo.Size = UDim2.new(0, 394, 0, Val - AddAmount)
-                selector.Size = UDim2.new(0, 396, 0, (Val - AddAmount) - 2)
-                selectorFrame.Size = UDim2.new(0, 396, 0, (Val - AddAmount) - 26)
-                UpdatePageSize()
-                checkSizes()
                 return SelectorFunctions
             end
+
             --
             function SelectorFunctions:SetFunction(new)
                 new = new or callback
