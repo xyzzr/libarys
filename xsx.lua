@@ -3126,32 +3126,39 @@ function library:Init(key)
                 return SelectorFunctions
             end
             --
-            function SelectorFunctions:RemoveOption(option)
-                if list[option] then
-                    list[option] = nil
-                    AddAmount = AddAmount - 20  -- Correctly decrease total height
+function SelectorFunctions:RemoveOption(option)
+    if not list[option] then return end  -- Ensure the option exists
 
-                    for _, v in pairs(selectorContainer:GetDescendants()) do
-                        if v:IsA("TextButton") and v.Text == option then
-                            v:Destroy()
-                        end
-                    end
+    list[option] = nil
+    AddAmount = AddAmount - 20  -- Reduce total height
 
-                    if selectorText.Text == option then
-                        selectorText.Text = ". . ."
-                    end
+    -- Remove the button with exact text match
+    for _, v in ipairs(selectorContainer:GetChildren()) do
+        if v:IsA("TextButton") and v.Text:lower() == option:lower() then
+            v:Destroy()
+        end
+    end
 
-                    -- Corrected size calculations
-                    checkSizes()
-                    selectorContainer.Size = UDim2.new(0, 394, 0, Val + AddAmount)
-                    selectorTwo.Size = UDim2.new(0, 394, 0, Val + AddAmount)
-                    selector.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 2)
-                    selectorFrame.Size = UDim2.new(0, 396, 0, (Val + AddAmount) + 26)
-                    UpdatePageSize()
-                    checkSizes()
-                end
-                return SelectorFunctions
-            end
+    -- Reset selectorText if the removed option was selected
+    if selectorText.Text:lower() == option:lower() then
+        selectorText.Text = ". . ."
+    end
+
+    -- Ensure the size does not go negative
+    local newSize = math.max(Val + AddAmount, 0)
+
+    -- Corrected size updates
+    selectorContainer.Size = UDim2.new(0, 394, 0, newSize)
+    selectorTwo.Size = UDim2.new(0, 394, 0, newSize)
+    selector.Size = UDim2.new(0, 396, 0, newSize + 2)
+    selectorFrame.Size = UDim2.new(0, 396, 0, newSize + 26)
+
+    UpdatePageSize()
+    checkSizes()
+
+    return SelectorFunctions
+end
+
 
             --
             function SelectorFunctions:SetFunction(new)
