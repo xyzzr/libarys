@@ -1420,9 +1420,9 @@ do
             Converted["_Frame"].Parent = Converted["_Main1"]
 
             Converted["_B"].Font = Enum.Font.Gotham
-            Converted["_B"].Text = "Atlas UI Lib: RoadToGlory#9879" -- please don't remove this, this is open sourced and I leave this here so that users can know the name of the UI library if they are interested in it
+            Converted["_B"].Text = ""
             Converted["_B"].TextColor3 = Color3.fromRGB(225.00000178813934, 225.00000178813934, 225.00000178813934)
-            Converted["_B"].TextSize = 12
+            Converted["_B"].TextSize = 0
             Converted["_B"].AnchorPoint = Vector2.new(0.5, 0.5)
             Converted["_B"].AutomaticSize = Enum.AutomaticSize.X
             Converted["_B"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
