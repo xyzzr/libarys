@@ -1,7 +1,7 @@
 local sigmasibiditoiletskibiditosigmamimgiemgmgeg = "This script is private. If you don’t have the key, what are you even doing here?"
 local sigmasibiditoiletskibiditosigmamimgiemgmgeg2 = "Website"
 local VERSION = "1.2"
-
+-- hi
 -- LURAPH (if i left it enabled)
 if not LPH_OBFUSCATED then
     local function r(...)
