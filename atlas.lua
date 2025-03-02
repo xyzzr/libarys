@@ -1,7 +1,7 @@
 local sigmasibiditoiletskibiditosigmamimgiemgmgeg = "This script is private. If you don’t have the key, what are you even doing here?"
 local sigmasibiditoiletskibiditosigmamimgiemgmgeg2 = "Website"
 local VERSION = "1.2"
--- hi
+-- 2
 -- LURAPH (if i left it enabled)
 if not LPH_OBFUSCATED then
     local function r(...)
@@ -1420,9 +1420,9 @@ do
             Converted["_Frame"].Parent = Converted["_Main1"]
 
             Converted["_B"].Font = Enum.Font.Gotham
-            Converted["_B"].Text = ""
+            Converted["_B"].Text = "aetherlis.ct.ws"
             Converted["_B"].TextColor3 = Color3.fromRGB(225.00000178813934, 225.00000178813934, 225.00000178813934)
-            Converted["_B"].TextSize = 0
+            Converted["_B"].TextSize = 12
             Converted["_B"].AnchorPoint = Vector2.new(0.5, 0.5)
             Converted["_B"].AutomaticSize = Enum.AutomaticSize.X
             Converted["_B"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
