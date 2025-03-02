@@ -1,20 +1,5 @@
-local sigmasibiditoiletskibiditosigmamimgiemgmgeg = "This script is private!"
-local sigmasibiditoiletskibiditosigmamimgiemgmgeg2 = "Copy website"
-
---[[
-
-鈻戔枅鈻堚枅鈻堚枅鈺椻枒鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈺椻枅鈻堚晽鈻戔枒鈻戔枒鈻戔枒鈻堚枅鈻堚枅鈻堚晽鈻戔枒鈻堚枅鈻堚枅鈻堚枅鈺 
-鈻堚枅鈺斺晲鈺愨枅鈻堚晽鈺氣晲鈺愨枅鈻堚晹鈺愨晲鈺濃枅鈻堚晳鈻戔枒鈻戔枒鈻戔枅鈻堚晹鈺愨晲鈻堚枅鈺椻枅鈻堚晹鈺愨晲鈺愨晲鈺 
-鈻堚枅鈻堚枅鈻堚枅鈻堚晳鈻戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枒鈻戔枅鈻堚枅鈻堚枅鈻堚枅鈺戔暁鈻堚枅鈻堚枅鈻堚晽鈻 
-鈻堚枅鈺斺晲鈺愨枅鈻堚晳鈻戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枒鈻戔枅鈻堚晹鈺愨晲鈻堚枅鈺戔枒鈺氣晲鈺愨晲鈻堚枅鈺 
-鈻堚枅鈺戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枅鈻堚晳鈻戔枒鈻戔枅鈻堚枅鈻堚枅鈻堚枅鈺椻枅鈻堚晳鈻戔枒鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺 
-鈺氣晲鈺濃枒鈻戔暁鈺愨暆鈻戔枒鈻戔暁鈺愨暆鈻戔枒鈻戔暁鈺愨晲鈺愨晲鈺愨晲鈺濃暁鈺愨暆鈻戔枒鈺氣晲鈺濃暁鈺愨晲鈺愨晲鈺愨暆鈻 
-
-Made by RoadToGlory#9879
-Join: https://discord.gg/xu5dDS3Pb9
-
-]]
-
+local sigmasibiditoiletskibiditosigmamimgiemgmgeg = "This script is private. If you don’t have the key, what are you even doing here?"
+local sigmasibiditoiletskibiditosigmamimgiemgmgeg2 = "Website"
 local VERSION = "1.2"
 
 -- LURAPH (if i left it enabled)
@@ -34,8 +19,6 @@ local Run = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
 local Core = game:GetService("CoreGui")
 local MP = game:GetService("MarketplaceService")
-
--- VARIABLES
 local player = Players.LocalPlayer
 local mouse = player:GetMouse()
 
@@ -113,8 +96,7 @@ do
                 gradient.Rotation = -90
             end
         end)
-
-        return con -- for proper destroying and to prevent memory leaks
+        return con
     end
 
     function utility:FormatNumber(number,decimalPlaces)
@@ -143,7 +125,6 @@ do
 
     function utility:DoClickEffect(element)
         local function makeEffect()
-            -- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
             local Converted = {
                 ["__buttonEffect"] = Instance.new("Frame");
                 ["_ImageLabel"] = Instance.new("ImageLabel");
