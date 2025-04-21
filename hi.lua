@@ -2253,7 +2253,7 @@ function inside:AddButton(Text, Callback)
 
 	-- Hover effect
 	local hoverColor = Color3.fromRGB(152, 152, 152)
-	local normalColor = Color3.fromRGB(0, 0, 0)
+	local normalColor = Color3.fromRGB(52,52,52)
 
 	Interactive.MouseEnter:Connect(function()
 		TweenService:Create(TextLabel, TweenInfo.new(0.2), {TextColor3 = hoverColor}):Play()
